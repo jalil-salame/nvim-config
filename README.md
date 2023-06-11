@@ -20,4 +20,8 @@ configuration.
 
 ## Usage
 
-Check `examples/flake.nix` and `examples/home.nix`
+Check `examples/flake.nix` and `examples/home.nix` (I don't promise I will keep these up to date):
+
+https://github.com/jalil-salame/nvim-config/blob/acdc594d417d028701376b4ef8202e39a0f87dcf/examples/flake.nix#L1-L40
+
+https://github.com/jalil-salame/nvim-config/blob/acdc594d417d028701376b4ef8202e39a0f87dcf/examples/home.nix#L1-L4
