@@ -4,17 +4,14 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixneovim.url = "github:NixNeovim/NixNeovim";
 
-    # # to ensure no duplication of inputs
-    nixneovimplugins.url = "github:NixNeovim/NixNeovimPlugins";
+    # To ensure no duplication of inputs (you'll probably use home-manager)
     home-manager.url = "github:nix-community/home-manager";
 
-    # # Don't duplicate inputs
+    # Don't duplicate inputs
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixneovim.inputs.nixpkgs.follows = "nixpkgs";
+    nixneovim.inputs.flake-utils.follows = "flake-utils";
     nixneovim.inputs.home-manager.follows = "home-manager";
-    nixneovim.inputs.nixneovimplugins.follows = "nixneovimplugins";
-    nixneovimplugins.inputs.nixpkgs.follows = "nixpkgs";
-    nixneovimplugins.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs = {

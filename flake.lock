@@ -34,24 +34,6 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "inputs": {
-        "systems": "systems_2"
-      },
-      "locked": {
-        "lastModified": 1685518550,
-        "narHash": "sha256-o2d0KcvaXzTrPRIo0kOLV0/QXHhDQ5DTi+OxcjO8xqY=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "a1720a10a6cfe8234c0e93907ffe81be440f4cef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -89,14 +71,14 @@
     },
     "nixneovim": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": [
+          "flake-utils"
+        ],
         "home-manager": [
           "home-manager"
         ],
         "nix-flake-tests": "nix-flake-tests",
-        "nixneovimplugins": [
-          "nixneovimplugins"
-        ],
+        "nixneovimplugins": "nixneovimplugins",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -121,23 +103,25 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": [
+          "nixneovim",
           "flake-utils"
         ],
         "nixpkgs": [
+          "nixneovim",
           "nixpkgs"
         ]
       },
       "locked": {
         "lastModified": 1686493579,
         "narHash": "sha256-b61/9bHQFXcrDIyJGDyZMLTrA7hQjAbTD5sKikt9UpI=",
-        "owner": "NixNeovim",
-        "repo": "NixNeovimPlugins",
+        "owner": "nixneovim",
+        "repo": "nixneovimplugins",
         "rev": "583764091ff9047fce388f3bdf07e2f65416febb",
         "type": "github"
       },
       "original": {
-        "owner": "NixNeovim",
-        "repo": "NixNeovimPlugins",
+        "owner": "nixneovim",
+        "repo": "nixneovimplugins",
         "type": "github"
       }
     },
@@ -193,26 +177,10 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nixneovim": "nixneovim",
-        "nixneovimplugins": "nixneovimplugins",
         "nixpkgs": "nixpkgs"
       }
     },
     "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
