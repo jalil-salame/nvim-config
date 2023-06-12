@@ -17,11 +17,11 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check that Code works
-        run: nix flake check
+        run: nix flake check --print-build-logs
       - name: Update Flake Inputs
-        run: nix flake update
+        run: nix flake update --print-build-logs
       - name: Check that Code still works
-        run: nix flake check
+        run: nix flake check --print-build-logs
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
