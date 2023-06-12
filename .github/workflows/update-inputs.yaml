@@ -1,7 +1,7 @@
 name: Update Flake inputs
 on:
   schedule:
-    cron: '37 4 * * *' # run daily at 04:37
+    - cron: '37 4 * * *' # run daily at 04:37
 
 jobs:
   update_flake:
