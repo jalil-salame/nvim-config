@@ -1,0 +1,33 @@
+name: Update Flake inputs
+on:
+  schedule:
+    cron: '37 4 * * *' # run daily at 04:37
+
+jobs:
+  update_flake:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ github.token }}
+          ref: ${{ github.head_ref }}
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check that Code works
+        run: nix flake check
+      - name: Update Flake Inputs
+        run: nix flake update
+      - name: Check that Code still works
+        run: nix flake check
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: Nvim-Config-CI
+          commit_user_email: ""
+          commit_author: ""
+          commit_message: 'chore(ci): Update flake inputs'
+          file_pattern: flake.lock
+          # push_options: '--force'
