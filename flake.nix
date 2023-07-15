@@ -2,9 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    # nixneovim.url = "github:jalil-salame/NixNeovim/autocmds";
-    # Latest commit is broken: https://github.com/NixNeovim/NixNeovim/pull/66#issuecomment-1619026859
-    nixneovim.url = "github:jalil-salame/NixNeovim/8b9d837057f690320d742389204515bc557aeb1f";
+    nixneovim.url = "github:jalil-salame/NixNeovim/autocmds";
 
     # To ensure no duplication of inputs (you'll probably use home-manager)
     home-manager.url = "github:nix-community/home-manager";
