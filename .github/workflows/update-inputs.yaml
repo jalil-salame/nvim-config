@@ -19,15 +19,8 @@ jobs:
       - name: Check that Code works
         run: nix flake check --print-build-logs
       - name: Update Flake Inputs
-        run: nix flake update --print-build-logs
+        run: nix flake update --print-build-logs --commit-lock-file
       - name: Check that Code still works
         run: nix flake check --print-build-logs
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_user_name: Nvim-Config-CI
-          commit_user_email: ""
-          commit_author: ""
-          commit_message: 'chore(ci): Update flake inputs'
-          file_pattern: flake.lock
-          # push_options: '--force'
+        run: git push origin
