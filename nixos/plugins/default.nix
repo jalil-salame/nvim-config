@@ -8,7 +8,6 @@
     enable = true;
     extraConfig = {update_events = "TextChanged,TextChangedI";};
   };
-  null-ls = import ./null-ls.nix;
   nvim-cmp = import ./cmp.nix;
   rust-tools.enable = true;
   telescope = {
