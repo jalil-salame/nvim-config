@@ -71,7 +71,7 @@
         require("formatter").setup {
           logging = true,
           log_level = vim.log.levels.WARN,
-          ["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace }
+          ["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
           -- Filetype Formatting
           c = { require("formatter.filetypes.c").clangformat },
           sh = { require("formatter.filetypes.sh").shfmt },
