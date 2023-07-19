@@ -22,7 +22,7 @@
   }:
     {
       nixosModules = let
-        nvim-config = import ./nixos;
+        nvim-config = import ./nvim-config;
       in {
         inherit nvim-config;
         nixneovim = nixneovim.nixosModules.default;
