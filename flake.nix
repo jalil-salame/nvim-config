@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    nixneovim.url = "github:jalil-salame/NixNeovim/autocmds";
+    nixneovim.url = "github:NixNeovim/NixNeovim";
 
     # To ensure no duplication of inputs (you'll probably use home-manager)
     home-manager.url = "github:nix-community/home-manager";
