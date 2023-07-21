@@ -1,5 +1,7 @@
 name: Update Flake inputs
 on:
+  puch:
+    paths: ['.github/workflows/update-inputs.yaml']
   schedule:
     - cron: '37 4 * * *' # run daily at 04:37
 
@@ -17,7 +19,7 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Git user/email
-        run:
+        run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Check that Code works
