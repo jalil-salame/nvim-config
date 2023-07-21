@@ -14,18 +14,20 @@
     mappings = import ./mappings.nix;
     augroups.highlightOnYank = {
       name = "highlightOnYank";
-      autocmds = [{
-        event = "TextYankPost";
-        pattern = "*";
-        luaCallback = ''
-          vim.highlight.on_yank {
-            higroup = (
-              vim.fn['hlexists'] 'HighlightedyankRegion' > 0 and 'HighlightedyankRegion' or 'IncSearch'
-            ),
-            timeout = 200,
-          }
-        '';
-      }];
+      autocmds = [
+        {
+          event = "TextYankPost";
+          pattern = "*";
+          luaCallback = ''
+            vim.highlight.on_yank {
+              higroup = (
+                vim.fn['hlexists'] 'HighlightedyankRegion' > 0 and 'HighlightedyankRegion' or 'IncSearch'
+              ),
+              timeout = 200,
+            }
+          '';
+        }
+      ];
     };
     extraPlugins = builtins.attrValues {
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;

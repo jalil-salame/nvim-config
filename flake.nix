@@ -3,6 +3,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     nixneovim.url = "github:NixNeovim/NixNeovim";
+    # nixneovim.url = "github:jalil-salame/NixNeovim";
 
     # To ensure no duplication of inputs (you'll probably use home-manager)
     home-manager.url = "github:nix-community/home-manager";
@@ -28,8 +29,7 @@
         nixneovim = nixneovim.nixosModules.default;
         default = {};
       };
-      overlays.nvim-config = nixneovim.overlays.default;
-      overlays.default = nixneovim.overlays.default;
+      inherit (nixneovim) overlays;
     }
     // flake-utils.lib.eachDefaultSystem (
       system: let
