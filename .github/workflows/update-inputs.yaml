@@ -1,6 +1,6 @@
 name: Update Flake inputs
 on:
-  puch:
+  push:
     paths: ['.github/workflows/update-inputs.yaml']
   schedule:
     - cron: '37 4 * * *' # run daily at 04:37
