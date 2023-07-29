@@ -1,6 +1,6 @@
 {
   enable = true;
-  servers.clangs.enable = true;
+  servers.clang.enable = true;
   servers.html.enable = true;
   servers.lua-language-server.enable = true;
   servers.jsonls.enable = true;
