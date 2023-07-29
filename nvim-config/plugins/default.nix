@@ -9,7 +9,7 @@
     extraConfig = {update_events = "TextChanged,TextChangedI";};
   };
   nvim-cmp = import ./cmp.nix;
-  rust-tools.enable = true;
+  # rust-tools.enable = true;
   telescope = {
     enable = true;
   };
