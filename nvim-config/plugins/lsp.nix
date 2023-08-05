@@ -2,7 +2,7 @@
   enable = true;
   servers.clangd.enable = true;
   servers.html.enable = true;
-  servers.lua-language-server.enable = true;
+  # servers.lua-language-server.enable = true;
   servers.jsonls.enable = true;
   servers.ruff-lsp.enable = true;
   # servers.rust-analyzer.enable = true;
