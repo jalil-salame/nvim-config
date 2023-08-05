@@ -4,12 +4,12 @@
   servers.html.enable = true;
   servers.lua-language-server.enable = true;
   servers.jsonls.enable = true;
-  servers.nil.enable = true;
-  # servers.ruff_lsp.enable = true;
-  servers.rust-analyzer.enable = true;
+  servers.ruff-lsp.enable = true;
+  # servers.rust-analyzer.enable = true;
   # servers.serve_d.enable = true;
-  # servers.taplo.enable = true;
-  # servers.typst_lsp.enable = true;
+  servers.statix.enable = true;
+  servers.taplo.enable = true;
+  servers.typst-lsp.enable = true;
   # servers.vimls.enable = true;
   onAttach = let
     opts = "noremap = true, buffer = bufnr";
