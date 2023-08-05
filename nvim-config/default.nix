@@ -31,7 +31,7 @@
     };
     extraPlugins = builtins.attrValues {
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;
-      inherit (pkgs.vimPlugins) formatter-nvim;
+      inherit (pkgs.vimPlugins) formatter-nvim LspUI-nvim;
     };
     # Formatting
     extraPackages = builtins.attrValues {
@@ -85,6 +85,10 @@
           toml = { require("formatter.filetypes.toml").taplo },
           yaml = { require("formatter.filetypes.yaml").yamlfmt },
         }
+      end
+
+      do -- Setup LspUI
+        require("LspUI").setup()
       end
       -- END: Lua Post Config
     '';
