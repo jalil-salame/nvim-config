@@ -111,11 +111,11 @@
         "nmt": "nmt"
       },
       "locked": {
-        "lastModified": 1692541053,
-        "narHash": "sha256-zSaFSMlkt3TsC9WN4vbm1NHRCjOCaE0KsTdDhS/zPeA=",
+        "lastModified": 1692658406,
+        "narHash": "sha256-GaeLpn+Z9Wu4mUamWJ3MnAluPA6OQKcf8EEb3ddtyd4=",
         "owner": "NixNeovim",
         "repo": "NixNeovim",
-        "rev": "ce34303a486d49a6a4d5c3b372625794e44ec5a6",
+        "rev": "cd6810328a335a5f465f9c491d2f7e81f35bba11",
         "type": "github"
       },
       "original": {
