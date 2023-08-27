@@ -34,27 +34,6 @@
     action = "vim.diagnostic.goto_prev";
     desc = "[D]iagnostics Previous [K]";
   };
-  # LSP functions
-  normal."<leader>r" = {
-    action = "vim.lsp.buf.rename";
-    desc = "[R]ename";
-  };
-  normal."gd" = {
-    action = "vim.lsp.buf.definition";
-    desc = "[G]o to [D]efinition";
-  };
-  normal."gt" = {
-    action = "vim.lsp.buf.type_definition";
-    desc = "[G]o to [T]ype Definition";
-  };
-  normal."gi" = {
-    action = "vim.lsp.buf.implementation";
-    desc = "[G]o to [I]mplementation";
-  };
-  normal."<leader>fa" = {
-    action = "vim.lsp.buf.code_action";
-    desc = "[F]ind Code [A]ctions";
-  };
   # Telescope
   normal."<leader>ff" = {
     action = "require('telescope.builtin').find_files";
