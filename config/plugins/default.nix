@@ -1,7 +1,7 @@
 {
   colorizer.enable = true;
   gitsigns.enable = true;
-  lsp = import ./lsp.nix;
+  lspconfig = import ./lspconfig.nix;
   lspkind.enable = true;
   lualine = import ./lualine.nix;
   luasnip = {
