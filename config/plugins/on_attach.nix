@@ -1,14 +1,12 @@
 let
   opts = "noremap = true, buffer = bufnr";
 in ''
-  local lsp_ui = require("LspUI").api
-
   -- Configure Omnifunc
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   -- Keymaps
-  vim.keymap.set('n', 'K', lsp_ui.hover, { desc = 'Hover Documentation', ${opts} })
-  vim.keymap.set('n', '<leader>r', lsp_ui.rename, { desc = '[R]ename', ${opts} })
-  vim.keymap.set({ 'n', 'v' }, '<leader>fa', lsp_ui.code_action, { desc = '[F]ind Code [A]ctions', ${opts} })
+  vim.keymap.set('n', 'K', ':Lspsaga', { desc = 'Hover Documentation', ${opts} })
+  vim.keymap.set('n', '<leader>r', ':Lspsaga rename', { desc = '[R]ename', ${opts} })
+  vim.keymap.set({ 'n', 'v' }, '<leader>fa', ':Lspsaga code_action', { desc = '[F]ind Code [A]ctions', ${opts} })
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [D]efinition', ${opts} })
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = '[G]o to [T]ype Definition', ${opts} })
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[G]o to [I]mplementation', ${opts} })
