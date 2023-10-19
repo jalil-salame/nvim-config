@@ -30,6 +30,7 @@
       ];
     };
     extraPlugins = builtins.attrValues {
+      inherit (pkgs.vimExtraPlugins) nvim-config-local;
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;
       inherit (pkgs.vimPlugins) formatter-nvim;
     };
@@ -56,6 +57,10 @@
     '';
     extraLuaPostConfig = ''
       -- Lua Post Config
+      do -- Setup config-local
+        require('config-local').setup()
+      end
+
       do -- Setup cmp-cmdline
         local cmp = require "cmp"
         cmp.setup.cmdline("/", {
