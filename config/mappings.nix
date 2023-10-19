@@ -16,6 +16,11 @@
     action = "'<cmd>cprev<CR>'";
     desc = "[Q]uickfix Previous [K]";
   };
+  # Open or create file
+  normal."<leader>gf" = {
+    action = "'<cmd>e <cfile><CR>'";
+    desc = "[G]o to [F]ile";
+  };
   # Keep Selection when indenting
   visualOnly.">" = {
     action = "'>gv'";
