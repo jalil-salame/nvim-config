@@ -15,6 +15,7 @@ in {
   lspconfig = import ./lspconfig.nix;
   lspkind.enable = true;
   lspsaga.enable = true;
+  lspsaga.extraConfig = {lightbulb = {sign = false;};}; # do not show in sign column
   lualine = import ./lualine.nix;
   luasnip.enable = true;
   luasnip.extraConfig = {update_events = "TextChanged,TextChangedI";};
