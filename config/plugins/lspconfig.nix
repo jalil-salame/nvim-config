@@ -8,7 +8,7 @@
   servers.nil.enable = true;
   servers.pyright.enable = true;
   servers.rnix-lsp.enable = true;
-  # servers.ruff-lsp.enable = true;
+  servers.ruff-lsp.enable = true;
   # servers.rust-analyzer.enable = true;
   # servers.serve_d.enable = true;
   # servers.statix.enable = true;
