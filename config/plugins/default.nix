@@ -11,6 +11,7 @@ let
   };
 in {
   colorizer.enable = true;
+  colorizer.userDefaultOptions.names = false; # disable named colors (i.e. red)
   gitsigns.enable = true;
   lspconfig = import ./lspconfig.nix;
   lspkind.enable = true;
