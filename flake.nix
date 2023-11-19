@@ -26,7 +26,8 @@
         nvim-config = import ./config;
       in {
         inherit nvim-config;
-        nixneovim = nixneovim.nixosModules.default;
+        nixneovim = nixneovim.nixosModules.homeManager;
+        nixneovim-23-05 = nixneovim.nixosModules.homeManager-23-05;
         default = {};
       };
       inherit (nixneovim) overlays;
