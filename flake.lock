@@ -113,15 +113,16 @@
         "nmt": "nmt"
       },
       "locked": {
-        "lastModified": 1701354136,
-        "narHash": "sha256-L7fJlnM5jHQjTh704FKeoV1FHdS5ZK/acX5tSxjgpsU=",
-        "owner": "NixNeovim",
+        "lastModified": 1701522364,
+        "narHash": "sha256-ANIzTKw3ZV+TwkO5mR7FdbSsJT1ApU+l/HFW5Cu2p8E=",
+        "owner": "jalil-salame",
         "repo": "NixNeovim",
-        "rev": "72ca8f0dece1f2a2839e828502c9c2d1f08da318",
+        "rev": "db488d64b87793e154d3913dd82c3d7d9e1db9d8",
         "type": "github"
       },
       "original": {
-        "owner": "NixNeovim",
+        "owner": "jalil-salame",
+        "ref": "ocaml-lsp",
         "repo": "NixNeovim",
         "type": "github"
       }

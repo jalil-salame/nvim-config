@@ -2,8 +2,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    nixneovim.url = "github:NixNeovim/NixNeovim";
-    # nixneovim.url = "github:jalil-salame/NixNeovim";
+    # nixneovim.url = "github:NixNeovim/NixNeovim";
+    nixneovim.url = "github:jalil-salame/NixNeovim/ocaml-lsp";
 
     # To ensure no duplication of inputs (you'll probably use home-manager)
     home-manager.url = "github:nix-community/home-manager";
