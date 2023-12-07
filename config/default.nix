@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.nixneovim = {
     enable = true;
+    package = pkgs.neovim-nightly;
     defaultEditor = true;
     colorschemes.gruvbox-nvim = {
       enable = true;
