@@ -37,15 +37,15 @@
             end
             -- Enable hover if supported
             if capabilities.hoverProvider then
-              vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { desc = 'Hover Documentation', ${opts} })
+              vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation', ${opts} })
             end
             -- Enable rename if supported
             if capabilities.renameProvider then
-              vim.keymap.set('n', '<leader>r', '<Cmd>Lspsaga rename<CR>', { desc = '[R]ename', ${opts} })
+              vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = '[R]ename', ${opts} })
             end
             -- Enable code actions if supported
             if capabilities.codeActionProvider then
-              vim.keymap.set({ 'n', 'v' }, '<leader>fa', '<Cmd>Lspsaga code_action<CR>', { desc = '[F]ind Code [A]ctions', ${opts} })
+              vim.keymap.set({ 'n', 'v' }, '<leader>fa', vim.lsp.buf.code_action, { desc = '[F]ind Code [A]ctions', ${opts} })
             end
             -- Enable formatting if supported
             if capabilities.documentFormattingProvider then
