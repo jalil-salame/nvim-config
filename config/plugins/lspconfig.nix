@@ -16,5 +16,4 @@
   servers.texlab.enable = true;
   servers.typst-lsp.enable = true;
   # servers.vimls.enable = true;
-  onAttach = import ./on_attach.nix;
 }

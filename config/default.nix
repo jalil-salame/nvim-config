@@ -13,23 +13,7 @@
     options = import ./options.nix;
     plugins = import ./plugins;
     mappings = import ./mappings.nix;
-    augroups.highlightOnYank = {
-      name = "highlightOnYank";
-      autocmds = [
-        {
-          event = "TextYankPost";
-          pattern = "*";
-          luaCallback = ''
-            vim.highlight.on_yank {
-              higroup = (
-                vim.fn['hlexists'] 'HighlightedyankRegion' > 0 and 'HighlightedyankRegion' or 'IncSearch'
-              ),
-              timeout = 200,
-            }
-          '';
-        }
-      ];
-    };
+    augroups = import ./augroups.nix;
     extraPlugins = builtins.attrValues {
       inherit (pkgs.vimExtraPlugins) nvim-config-local;
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;
