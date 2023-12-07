@@ -21,23 +21,26 @@
     nixneovim,
     neovim-nightly,
     ...
-  }:
+  }: let
+    nvim-config = import ./config;
+    overlays = {
+      nixneovim = nixneovim.overlays.default;
+      neovim-nightly = neovim-nightly.overlay;
+    };
+  in
     {
-      nixosModules = let
-        nvim-config = import ./config;
-      in {
+      nixosModules = {
         inherit nvim-config;
         nixneovim = nixneovim.nixosModules.homeManager;
         nixneovim-23-05 = nixneovim.nixosModules.homeManager-23-05;
         default = {};
       };
-      inherit (nixneovim) overlays;
+      inherit overlays;
     }
     // flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [neovim-nightly.overlay];
         };
       in {
         formatter = pkgs.alejandra;
