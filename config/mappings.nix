@@ -44,23 +44,23 @@
     desc = "Toggle Trouble";
   };
   normal."<leader>xw" = {
-    action = "require('trouble').toggle('workspace_diagnostics')";
+    action = "function() require('trouble').toggle('workspace_diagnostics') end";
     desc = "Toggle [W]orkspace Trouble";
   };
   normal."<leader>xd" = {
-    action = "require('trouble').toggle('document_diagnostics')";
+    action = "function() require('trouble').toggle('document_diagnostics') end";
     desc = "Toggle [D]ocument Trouble";
   };
   normal."<leader>xq" = {
-    action = "require('trouble').toggle('quickfix')";
+    action = "function() require('trouble').toggle('quickfix') end";
     desc = "Toggle [Q]uickfix Trouble";
   };
   normal."<leader>xl" = {
-    action = "require('trouble').toggle('loclist')";
+    action = "function() require('trouble').toggle('loclist') end";
     desc = "Toggle [L]oclist Trouble";
   };
   normal."gR" = {
-    action = "require('trouble').toggle('lsp_references')";
+    action = "function() require('trouble').toggle('lsp_references') end";
     desc = "Toggle Lsp [R]eferences Trouble";
   };
   # Telescope
