@@ -23,10 +23,10 @@
         event = "LspAttach";
         pattern = "*";
         luaCallback = let
-          opts = "noremap = true, bufnr = bufnr";
+          opts = "noremap = true, buffer = bufnr";
         in ''
           local bufnr = opts.buf
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          local client = vim.lsp.get_client_by_id(opts.data.client_id)
           local capabilities = client.server_capabilities
           -- Set Omnifunc if supported
           if capabilities.completionProvider then
@@ -34,7 +34,7 @@
           end
           -- Enable inlay hints if supported
           if capabilities.inlayHintProvider then
-            vim.lsp.inlay_hint.enable(args.buf, true)
+            vim.lsp.inlay_hint.enable(bufnr, true)
           end
           -- Enable hover if supported
           if capabilities.hoverProvider then
