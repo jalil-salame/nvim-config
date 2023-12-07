@@ -16,4 +16,5 @@
   treesitter.indent = true;
   treesitter.incrementalSelection.enable = true;
   treesitter-context.enable = true;
+  trouble.enable = true;
 }

@@ -39,6 +39,30 @@
     action = "vim.diagnostic.goto_prev";
     desc = "[D]iagnostics Previous [K]";
   };
+  normal."<leader>xx" = {
+    action = "require('trouble').toggle";
+    desc = "Toggle Trouble";
+  };
+  normal."<leader>xw" = {
+    action = "require('trouble').toggle('workspace_diagnostics')";
+    desc = "Toggle [W]orkspace Trouble";
+  };
+  normal."<leader>xd" = {
+    action = "require('trouble').toggle('document_diagnostics')";
+    desc = "Toggle [D]ocument Trouble";
+  };
+  normal."<leader>xq" = {
+    action = "require('trouble').toggle('quickfix')";
+    desc = "Toggle [Q]uickfix Trouble";
+  };
+  normal."<leader>xl" = {
+    action = "require('trouble').toggle('loclist')";
+    desc = "Toggle [L]oclist Trouble";
+  };
+  normal."gR" = {
+    action = "require('trouble').toggle('lsp_references')";
+    desc = "Toggle Lsp [R]eferences Trouble";
+  };
   # Telescope
   normal."<leader>ff" = {
     action = "require('telescope.builtin').find_files";
