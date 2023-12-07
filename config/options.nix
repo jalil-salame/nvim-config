@@ -2,7 +2,7 @@
   # Appearance
   number = true;
   relativenumber = true;
-  colorcolumn = true;
+  colorcolumn = "+1";
   cursorline = true;
   wrap = false;
   splitright = true;
