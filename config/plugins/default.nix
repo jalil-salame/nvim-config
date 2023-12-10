@@ -8,7 +8,6 @@
   luasnip.enable = true;
   luasnip.extraConfig = {update_events = "TextChanged,TextChangedI";};
   nvim-cmp = import ./cmp.nix;
-  rust-tools.enable = true;
   telescope.enable = true;
   treesitter.enable = true;
   treesitter.indent = true;

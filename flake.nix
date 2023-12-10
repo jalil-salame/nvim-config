@@ -1,8 +1,8 @@
 {
   inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  # nixneovim.url = "github:NixNeovim/NixNeovim";
-  inputs.nixneovim.url = "github:jalil-salame/NixNeovim/remove-events-enum";
+  inputs.nixneovim.url = "github:NixNeovim/NixNeovim";
+  # inputs.nixneovim.url = "github:jalil-salame/NixNeovim/remove-events-enum";
   inputs.neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
   # To ensure no duplication of inputs (you'll probably use home-manager)

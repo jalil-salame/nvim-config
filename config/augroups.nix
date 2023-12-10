@@ -36,6 +36,13 @@
           if capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(bufnr, true)
           end
+          vim.keymap.set('n',  -- Some Lsp servers do not advertise inlay hints properly so enable this keybinding regardless
+            '<space>ht',
+            function()
+              vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+            end,
+            { desc = '[H]ints [T]oggle', ${opts} }
+          )
           -- Enable hover if supported
           if capabilities.hoverProvider then
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation', ${opts} })

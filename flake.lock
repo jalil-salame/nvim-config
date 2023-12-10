@@ -259,16 +259,15 @@
         "nmt": "nmt"
       },
       "locked": {
-        "lastModified": 1701988628,
-        "narHash": "sha256-JjkrU/R+tAX9F8i9tYfQIhmH8ICCekoGjDb8NC1/8TA=",
-        "owner": "jalil-salame",
+        "lastModified": 1702214565,
+        "narHash": "sha256-P2yiRLeNolF2tNSOtWbSk1jg5zF9KLxxINlORkKXZsg=",
+        "owner": "NixNeovim",
         "repo": "NixNeovim",
-        "rev": "3b31dd1c2a669445959349578b33445a5cbbb15e",
+        "rev": "6cb897d03b5d00df4fb933615e92110540b2596c",
         "type": "github"
       },
       "original": {
-        "owner": "jalil-salame",
-        "ref": "remove-events-enum",
+        "owner": "NixNeovim",
         "repo": "NixNeovim",
         "type": "github"
       }

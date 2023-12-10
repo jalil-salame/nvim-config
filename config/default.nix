@@ -15,7 +15,7 @@
     mappings = import ./mappings.nix;
     augroups = import ./augroups.nix;
     extraPlugins = builtins.attrValues {
-      inherit (pkgs.vimExtraPlugins) nvim-config-local dressing-nvim;
+      inherit (pkgs.vimExtraPlugins) nvim-config-local dressing-nvim rustaceanvim;
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;
       inherit (pkgs.vimPlugins) formatter-nvim;
     };
