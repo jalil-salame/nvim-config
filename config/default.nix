@@ -15,9 +15,8 @@
     mappings = import ./mappings.nix;
     augroups = import ./augroups.nix;
     extraPlugins = builtins.attrValues {
-      inherit (pkgs.vimExtraPlugins) nvim-config-local dressing-nvim rustaceanvim;
-      inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline;
-      inherit (pkgs.vimPlugins) formatter-nvim;
+      inherit (pkgs.vimExtraPlugins) nvim-config-local dressing-nvim rustaceanvim idris2-nvim nui-nvim;
+      inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline formatter-nvim;
     };
     # Formatting
     extraPackages = builtins.attrValues {
@@ -48,6 +47,10 @@
 
       do -- Setup dressing.nvim
         -- require("dressing").setup()
+      end
+
+      do -- Setup idris2-nvim
+        require("idris2").setup { }
       end
 
       do -- Setup cmp-cmdline
