@@ -221,7 +221,6 @@
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
-          "nixneovim",
           "nixneovimplugins",
           "poetry2nix",
           "nixpkgs"
@@ -251,7 +250,9 @@
           "home-manager"
         ],
         "nix-flake-tests": "nix-flake-tests",
-        "nixneovimplugins": "nixneovimplugins",
+        "nixneovimplugins": [
+          "nixneovimplugins"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -275,11 +276,9 @@
     "nixneovimplugins": {
       "inputs": {
         "flake-utils": [
-          "nixneovim",
           "flake-utils"
         ],
         "nixpkgs": [
-          "nixneovim",
           "nixpkgs"
         ],
         "poetry2nix": "poetry2nix"
@@ -293,8 +292,9 @@
         "type": "github"
       },
       "original": {
-        "owner": "nixneovim",
-        "repo": "nixneovimplugins",
+        "owner": "jalil-salame",
+        "ref": "idris2-plugin",
+        "repo": "NixNeovimPlugins",
         "type": "github"
       }
     },
@@ -363,13 +363,11 @@
     "poetry2nix": {
       "inputs": {
         "flake-utils": [
-          "nixneovim",
           "nixneovimplugins",
           "flake-utils"
         ],
         "nix-github-actions": "nix-github-actions",
         "nixpkgs": [
-          "nixneovim",
           "nixneovimplugins",
           "nixpkgs"
         ]
@@ -394,6 +392,7 @@
         "home-manager": "home-manager",
         "neovim-nightly": "neovim-nightly",
         "nixneovim": "nixneovim",
+        "nixneovimplugins": "nixneovimplugins",
         "nixpkgs": "nixpkgs_2"
       }
     },
