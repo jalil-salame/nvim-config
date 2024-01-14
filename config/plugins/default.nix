@@ -6,7 +6,7 @@
   lspkind.enable = true;
   lualine = import ./lualine.nix;
   luasnip.enable = true;
-  luasnip.extraConfig = {update_events = "TextChanged,TextChangedI";};
+  luasnip.extraConfig = { update_events = "TextChanged,TextChangedI"; };
   nvim-cmp = import ./cmp.nix;
   telescope.enable = true;
   treesitter.enable = true;
