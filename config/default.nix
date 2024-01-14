@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.nixneovim = {
     enable = true;
     package = pkgs.neovim-nightly;

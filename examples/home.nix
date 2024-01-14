@@ -1,4 +1,4 @@
-{nvim-modules, ...}: {
-  imports = [nvim-modules.nixneovim nvim-modules.nvim-config];
+{ nvim-modules, ... }: {
+  imports = [ nvim-modules.nixneovim nvim-modules.nvim-config ];
   # ...
 }

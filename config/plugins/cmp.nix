@@ -38,10 +38,10 @@
   };
   # Menu Icons
   formatting.format = "require('lspkind').cmp_format { mode = 'symbol', maxwidth = 50 }";
-  mappingPresets = ["insert"];
+  mappingPresets = [ "insert" ];
   mapping = {
     "<C-n>" = {
-      modes = ["i" "s"];
+      modes = [ "i" "s" ];
       action = ''
         function(fallback)
           if cmp.visible() then
@@ -57,7 +57,7 @@
       '';
     };
     "<C-p>" = {
-      modes = ["i" "s"];
+      modes = [ "i" "s" ];
       action = ''
         function(fallback)
           if cmp.visible() then
