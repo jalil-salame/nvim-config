@@ -17,18 +17,15 @@
   outputs = { nixpkgs, flake-utils, nixneovim, neovim-nightly, ... }:
     let
       nvim-config = import ./config;
-      overlays = {
-        nixneovim = nixneovim.overlays.default;
-        neovim-nightly = neovim-nightly.overlay;
-      };
+      # Merge both overlays together
+      overlays.default = final: prev: (nixneovim.overlays.default final prev) // (neovim-nightly.overlays.default final prev);
     in
     {
       nixosModules = {
         inherit nvim-config;
-        nixneovim = nixneovim.nixosModules.homeManager;
-        nixneovim-23-05 = nixneovim.nixosModules.homeManager-23-05;
-        default = { };
+        default = { imports = [ nvim-config nixneovim.nixosModules.homeManager ]; };
       };
+
       inherit overlays;
     }
     // flake-utils.lib.eachDefaultSystem (system: let pkgs = import nixpkgs { inherit system; }; in { formatter = pkgs.nixpkgs-fmt; });
