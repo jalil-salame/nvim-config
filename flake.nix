@@ -20,7 +20,7 @@
       supportedSystems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" "aarch64-linux" ];
       forEachSupportedSystem = f: lib.genAttrs supportedSystems (system: f (import nixpkgs { inherit system; }));
       # Merge both overlays together
-      overlays.default = final: prev: (nixneovim.overlays.default final prev) // (neovim-nightly.overlays.default final prev);
+      overlays.default = final: prev: (nixneovim.overlays.default final (neovim-nightly.overlays.default final prev));
       # Create module
       nvim-config.imports = [ ./config nixneovim.nixosModules.homeManager ];
     in
