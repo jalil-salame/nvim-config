@@ -21,7 +21,6 @@
       forEachSupportedSystem = f: lib.genAttrs supportedSystems (system: f (import nixpkgs { inherit system; }));
       # Create module
       nvim-config.imports = [
-        {  nixpkgs.overlays = [ nixneovim.overlays.default neovim-nightly.overlays.default ];  }
         nixneovim.nixosModules.homeManager
         ./config
       ];
@@ -29,6 +28,9 @@
     {
       # Schemas tell Nix about the structure of your flake's outputs
       inherit (flake-schemas) schemas;
+
+      overlays.nixneovim = nixneovim.overlays.default;
+      overlays.neovim-nightly = neovim-nightly.overlays.default;
 
       nixosModules = {
         inherit nvim-config;
