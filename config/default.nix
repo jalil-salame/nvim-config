@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+overlays: { pkgs, ... }: {
+  nixpkgs = { inherit overlays; };
+
   programs.nixneovim = {
     enable = true;
     package = pkgs.neovim-nightly;

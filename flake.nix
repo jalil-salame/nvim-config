@@ -20,9 +20,12 @@
       supportedSystems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" "aarch64-linux" ];
       forEachSupportedSystem = f: lib.genAttrs supportedSystems (system: f (import nixpkgs { inherit system; }));
       # Merge both overlays together
-      overlays.default = final: prev: (nixneovim.overlays.default final (neovim-nightly.overlays.default final prev));
+      overlays = [ nixneovim.overlays.default neovim-nightly.overlays.default ];
       # Create module
-      nvim-config.imports = [ ./config nixneovim.nixosModules.homeManager ];
+      nvim-config.imports = [
+        nixneovim.nixosModules.homeManager
+        (import ./config overlays)
+      ];
     in
     {
       # Schemas tell Nix about the structure of your flake's outputs
@@ -33,7 +36,5 @@
       };
 
       formatter = forEachSupportedSystem (pkgs: pkgs.nixpkgs-fmt);
-
-      inherit overlays;
     };
 }
