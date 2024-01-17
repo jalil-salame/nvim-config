@@ -23,8 +23,9 @@
       overlays = [ nixneovim.overlays.default neovim-nightly.overlays.default ];
       # Create module
       nvim-config.imports = [
+        { nixpkgs = { inherit overlays; }; }
         nixneovim.nixosModules.homeManager
-        (import ./config overlays)
+        ./config
       ];
     in
     {

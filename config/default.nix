@@ -1,5 +1,4 @@
-overlays: { pkgs, ... }: {
-  nixpkgs = { inherit overlays; };
+{ pkgs, ... }: {
 
   programs.nixneovim = {
     enable = true;
