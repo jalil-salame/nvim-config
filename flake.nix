@@ -19,11 +19,9 @@
       inherit (nixpkgs) lib;
       supportedSystems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" "aarch64-linux" ];
       forEachSupportedSystem = f: lib.genAttrs supportedSystems (system: f (import nixpkgs { inherit system; }));
-      # Merge both overlays together
-      overlays = [ nixneovim.overlays.default neovim-nightly.overlays.default ];
       # Create module
       nvim-config.imports = [
-        { nixpkgs = { inherit overlays; }; }
+        {  nixpkgs.overlays = [ nixneovim.overlays.default neovim-nightly.overlays.default ];  }
         nixneovim.nixosModules.homeManager
         ./config
       ];
@@ -31,6 +29,7 @@
     {
       # Schemas tell Nix about the structure of your flake's outputs
       inherit (flake-schemas) schemas;
+
       nixosModules = {
         inherit nvim-config;
         default = nvim-config;
