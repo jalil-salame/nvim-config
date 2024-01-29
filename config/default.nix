@@ -16,7 +16,7 @@
     mappings = import ./mappings.nix;
     augroups = import ./augroups.nix;
     extraPlugins = builtins.attrValues {
-      inherit (pkgs.vimExtraPlugins) nvim-config-local dressing-nvim rustaceanvim idris2-nvim nui-nvim;
+      inherit (pkgs.vimExtraPlugins) dressing-nvim rustaceanvim idris2-nvim nui-nvim;
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline formatter-nvim;
     };
     # Formatting
@@ -41,11 +41,6 @@
       -- END: Lua Pre Config
     '';
     extraLuaPostConfig = ''
-      -- Lua Post Config
-      do -- Setup config-local
-        require('config-local').setup()
-      end
-
       do -- Setup dressing.nvim
         -- require("dressing").setup()
       end
