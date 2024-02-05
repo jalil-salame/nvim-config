@@ -16,7 +16,7 @@
     mappings = import ./mappings.nix;
     augroups = import ./augroups.nix;
     extraPlugins = builtins.attrValues {
-      inherit (pkgs.vimExtraPlugins) dressing-nvim rustaceanvim idris2-nvim nui-nvim;
+      inherit (pkgs.vimExtraPlugins) dressing-nvim rustaceanvim idris2-nvim nui-nvim nvim-lint;
       inherit (pkgs.vimPlugins) lualine-lsp-progress nvim-web-devicons FTerm-nvim cmp-cmdline formatter-nvim;
     };
     # Formatting
@@ -41,14 +41,6 @@
       -- END: Lua Pre Config
     '';
     extraLuaPostConfig = ''
-      do -- Setup dressing.nvim
-        -- require("dressing").setup()
-      end
-
-      do -- Setup idris2-nvim
-        require("idris2").setup { }
-      end
-
       do -- Setup cmp-cmdline
         local cmp = require "cmp"
         cmp.setup.cmdline("/", {
@@ -59,6 +51,10 @@
           mapping = cmp.mapping.preset.cmdline(),
           sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } })
         })
+      end
+
+      do -- Setup dressing.nvim
+        -- require("dressing").setup()
       end
 
       do -- Setup formatter.nvim
@@ -77,6 +73,16 @@
           rust = { require("formatter.filetypes.rust").rustfmt },
           toml = { require("formatter.filetypes.toml").taplo },
           yaml = { require("formatter.filetypes.yaml").yamlfmt },
+        }
+      end
+
+      do -- Setup idris2-nvim
+        require("idris2").setup { }
+      end
+
+      do -- Setup nvim-lint
+        require("lint").linters_by_ft = {
+          latex = { "chktex", "typos" },
         }
       end
     '';

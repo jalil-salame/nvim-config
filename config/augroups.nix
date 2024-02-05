@@ -15,6 +15,17 @@
     }
   ];
 
+  runLinter.name = "runLinter";
+  runLinter.autocmds = [
+    {
+      event = "BufWritePost";
+      pattern = "*";
+      luaCallback = ''
+        require("lint").try_lint()
+      '';
+    }
+  ];
+
   restoreCursorPosition.name = "restoreCursorPosition";
   restoreCursorPosition.autocmds = [
     {
