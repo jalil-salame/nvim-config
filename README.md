@@ -1,5 +1,11 @@
 # NeoVIM Configuration using NixNeovim
 
+> [!Warning]
+> This repository has been archived in favor of my
+> [NixOS configuration](https://github.com/jalil-salame/configuration.nix). You
+> may still be able to get useful information out of this repository, but it is
+> not a good idea to use it.
+
 This is my NeoVIM configuration using
 [NixNeovim](https://github.com/NixNeovim/NixNeovim). It is only suppossed to
 support my use case so only use it as a reference and do not depend on it.
